@@ -1,7 +1,7 @@
 
 export default function Button({name}) {
     return(
-        <button>{name}</button>
+        <button className="nav-button">{name}</button>
     )
 }
 
