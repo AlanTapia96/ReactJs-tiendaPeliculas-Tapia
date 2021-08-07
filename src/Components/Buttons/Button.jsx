@@ -1,7 +1,12 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
-export default function Button({name}) {
+const ButtonNav = () => {
     return(
-        <button className="nav-button">{name}</button>
+        <button type="button" className="nav-button btn btn-secondary">
+            <FontAwesomeIcon icon={faShoppingCart}/>
+        </button>
     )
 }
 
+export default ButtonNav

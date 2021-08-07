@@ -1,0 +1,21 @@
+.card{
+
+    width: 10rem;
+    margin: 20px auto;
+}
+
+.card__body{
+    padding:10px;
+    display: flex;
+    justify-content: center;
+}
+
+.card__button{
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+}
+
+.buyButton{
+    width: 100%;
+}
