@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer mensaje="Próximamente se agregarán las películas"/>
+      <ItemListContainer />
     </>
   );
 }

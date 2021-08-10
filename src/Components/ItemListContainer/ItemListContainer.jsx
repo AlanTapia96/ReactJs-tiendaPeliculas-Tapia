@@ -1,6 +1,7 @@
 import "./ItemListContainer.css"
 
 import ItemList from "../ItemList/ItemList";
+import { useEffect, useState } from "react";
 
 
 const itemsData = [
@@ -10,29 +11,30 @@ const itemsData = [
             { id: 5, title: "Pelicula 4", description: "Descripción de la película 4", price: 450, pictureUrl: 'http://via.placeholder.com/150x150'}
 ]
        
-
-const getItemsData = () => {
-    console.log('Esperando respuesta...')
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            const items = itemsData;
-            items.length > 0 ? resolve(items) : reject("Error")}
-            ,2000)
-})}
-
-const getItems = new Promise(async (resolve,reject) => {
-    const items = await getItemsData();
-    (items.length > 0) ? resolve(items) : reject("")
-})
-
-
-// const items = getItems;
-// console.log("items",items)
-
 const ItemListContainer = () => {
+    const [products, setProducts] = useState([])
+    const [cargando, setCargando] = useState(true)
+
+
+    useEffect(()=>{
+        const getItemsData = async () => {
+            console.log('Esperando respuesta...')
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const items = itemsData;
+                    items.length > 0 ? resolve(items) : reject("Error")}
+                    ,2000)
+        })}
+        getItemsData().then(data=>{
+            setProducts(data);
+            setCargando(false);
+        })
+    },[])
+    
+
     return(
         <>
-            <ItemList items={async() => await getItems}/>
+            {cargando ? <div>Cargando Productos</div> : <ItemList items={products}/>}   
         </>
 )}
 
