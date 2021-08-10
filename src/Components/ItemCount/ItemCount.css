@@ -1,7 +1,6 @@
 .card{
-
-    width: 10rem;
-    margin: 20px auto;
+    width: inherit;
+    /* margin: 20px auto; */
 }
 
 .card__body{

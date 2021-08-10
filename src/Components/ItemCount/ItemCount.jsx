@@ -1,5 +1,5 @@
 import { useState } from "react"
-import ButtonItemCount from "./ButtonItemCount";
+import ButtonItemCount from "../Buttons/ButtonItemCount";
 import "./ItemCount.css"
 
 const ItemCount = ( {stock, initial, onAddItem} ) => {
