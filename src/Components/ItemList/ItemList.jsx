@@ -1,4 +1,4 @@
-import ItemCard from "../Item/Item"
+import ItemCard from "../ItemCard/ItemCard"
 import { Col,Row } from "react-bootstrap"
 
 const ItemList = ( {items} ) => {

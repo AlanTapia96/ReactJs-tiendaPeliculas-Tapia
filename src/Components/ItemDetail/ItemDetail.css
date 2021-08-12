@@ -1,0 +1,27 @@
+.card-flex{
+    display: flex;
+    flex-direction: row!important;
+    text-align: center;
+}
+
+.itemDetail-img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.card-img{
+    height:30rem;
+    min-width: 25em!important;
+    margin: auto 0;
+}
+
+.itemDetail-title{
+    font-size: 6rem!important;
+    text-align: center
+}
+
+.itemDetail-itemCount{
+    display: block;
+    width: 100%;
+}

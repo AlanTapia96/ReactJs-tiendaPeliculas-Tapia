@@ -2,7 +2,7 @@ import { useState } from "react"
 import ButtonItemCount from "../Buttons/ButtonItemCount";
 import "./ItemCount.css"
 
-const ItemCount = ( {stock, initial, onAddItem} ) => {
+const ItemCount = ( {stock=5, initial=1, onAddItem} ) => {
 
         const [cant,setCant] = useState(initial);
 
@@ -12,7 +12,7 @@ const ItemCount = ( {stock, initial, onAddItem} ) => {
         }
         
         return(
-            <div className="card">
+            <>
                 <div className="card__body">
                     <ButtonItemCount stock={stock} handleEvent={handleAddCant} text="-" cantidad={-1}/>
                     <span className="card-title me-3 ms-3">{cant}</span>
@@ -21,7 +21,7 @@ const ItemCount = ( {stock, initial, onAddItem} ) => {
                 <div className="card__button">
                     <ButtonItemCount handleEvent={onAddItem} text={"Agregar al carrito"} cantidad={cant} className="buyButton"/> 
                 </div>
-            </div>
+            </>
     )}
 
 export default ItemCount

@@ -1,17 +1,17 @@
 .card{
     width: inherit;
-    /* margin: 20px auto; */
+    box-shadow: 2px 12px 16px 1px rgb(0 0 0 / 20%);
 }
 
 .card__body{
-    padding:10px;
+    padding: .5rem;
     display: flex;
     justify-content: center;
 }
 
 .card__button{
     margin-top: 10px;
-    width: 100%;
+    margin: 0 auto .5rem;
     display: block;
 }
 
