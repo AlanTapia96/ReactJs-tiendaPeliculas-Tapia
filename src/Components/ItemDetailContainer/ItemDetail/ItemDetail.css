@@ -12,7 +12,7 @@
 
 .card-img{
     height:30rem;
-    min-width: 25em!important;
+    width: 50%!important;
     margin: auto 0;
 }
 

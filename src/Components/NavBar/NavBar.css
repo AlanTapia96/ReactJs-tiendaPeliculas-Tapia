@@ -2,3 +2,32 @@
     width: 8rem;
     height: 4rem;
 }
+
+.active{
+    color: rgb(130, 151, 197)!important;
+
+}
+
+.nav-links{
+    display: flex;
+    align-items: baseline;
+}
+
+.nav-links > a{
+    text-decoration: none;
+    color: aliceblue;
+    margin-right: 2rem;
+    transition: all 0.5s ease;
+}
+
+.link-img{
+    text-decoration: none;
+    color: aliceblue;
+    transition: all 0.1s ease;
+}
+
+.nav-links > a:hover, .link-img:hover{
+    color: white;
+    font-size: 1.05rem;
+    margin-bottom: .25rem;
+}

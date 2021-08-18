@@ -1,6 +1,10 @@
 import { Row, Col, Card } from 'react-bootstrap'
-import ItemCount from '../ItemCount/ItemCount';
+import ItemCount from '../../ItemCount/ItemCount';
 import './ItemDetail.css'
+
+const handleAddItem = (cant) => {
+    console.log(`${cant} producto/s agregados con éxito!`);
+}
 
 const ItemDetail = ( {film} ) => {
 
@@ -22,7 +26,7 @@ const ItemDetail = ( {film} ) => {
                     Precio unitario: {price} ARS
                 </Card.Text>
                 <div>
-                    <ItemCount className="itemDetail-itemCount"/>
+                    <ItemCount stock={6} initial={1} onAddItem={handleAddItem} className="itemDetail-itemCount"/>
                 </div>
                 </Card.Body>
             </div>

@@ -1,7 +1,7 @@
-const ButtonItemCount = ( {stock,text,handleEvent,cantidad } ) => {
+const ButtonItemCount = ( {stock,text,handleEvent,cantidad,disabled } ) => {
     return(
-        <button type="button" disabled={stock===0} className="btn btn-secondary" 
-            onClick={() => {(cantidad === -1) ? handleEvent(text) : handleEvent(cantidad)}}>
+        <button type="button" disabled={disabled} className="btn btn-secondary" 
+            onClick={() => {(text==="+" || text ==="-") ? handleEvent(text) : handleEvent(cantidad)}}>
                     {text}
         </button>
     )

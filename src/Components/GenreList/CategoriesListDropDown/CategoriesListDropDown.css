@@ -1,0 +1,12 @@
+.categoriesList-item{
+    text-decoration: none; 
+    color: rgba(7, 6, 6, 0.466);
+    padding-left: .7rem;    
+    font-size: 1.2rem;
+}
+
+.dropdown-categories{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
