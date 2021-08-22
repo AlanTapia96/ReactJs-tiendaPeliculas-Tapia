@@ -1,45 +1,37 @@
-import { useEffect, useState } from "react"
-import ButtonItemCount from "../Buttons/ButtonItemCount";
+import { useState } from "react"
+import ButtonItemCart from "../Buttons/ButtonItemCart";
 import "./ItemCount.css"
 
-const ItemCount = ( {stock=5, initial=1, onAddItem} ) => {
+const ItemCount = ({ stock=5, initial=1, onAddItem }) => {
 
         const [cant,setCant] = useState(initial);
-        const [disabledMore,setDisabledMore] = useState(false);
-        const [disabledLess,setDisabledLess] = useState(false);
-        const [disabledBuy,setDisabledBuy] = useState(false);
-        
 
-        const handleAddCant = (op) => {
-            if ((cant < stock) && (op === "+")) setCant(cant+1)
-            else if ((cant > 0) && (op === "-")) setCant(cant-1)
+        const handleCant = {
+            agregar: () => { 
+                if(stock !== 0){
+                    setCant(cant+1); 
+                }
+            },
+            restar: () => {
+                if(cant>0){     
+                    setCant(cant-1)
+                }
+            }     
         }
 
-        useEffect(() =>{       
-            if(cant === 0){
-                setDisabledLess(true);
-                setDisabledBuy(true);
-                setDisabledMore(false);
-            }else if (cant === stock){
-                setDisabledMore(true) ;
-                setDisabledLess(false);
-                setDisabledBuy(false);
-            }else{
-                setDisabledMore(false) ;
-                setDisabledLess(false);
-                setDisabledBuy(false);
-            }     
-        },[cant])
+        const handleAddChart = () => {
+            onAddItem(cant)
+        }
         
         return(
             <>
                 <div className="card__body">
-                    <ButtonItemCount stock={stock} handleEvent={handleAddCant} disabled={disabledLess} text="-" cantidad={cant}/>
+                    <button type="button" disabled={cant===0} className="btn btn-primary" onClick={handleCant.restar}>-</button>
                     <span className="card-title me-3 ms-3">{cant}</span>
-                    <ButtonItemCount stock={stock} handleEvent={handleAddCant} disabled={disabledMore} text="+" cantidad={cant}/>
+                    <button type="button" disabled={cant===stock} className="btn btn-primary" onClick={handleCant.agregar}>+</button>
                 </div>
                 <div className="card__button">
-                    <ButtonItemCount handleEvent={onAddItem} text={"Agregar al carrito"} disabled={disabledBuy} cantidad={cant} className="buyButton"/> 
+                    <ButtonItemCart handleEvent={handleAddChart} cant={cant} text={"Agregar al carrito"} disabled={cant===0} className="buyButton"/> 
                 </div>
             </>
     )}

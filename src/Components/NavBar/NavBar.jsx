@@ -1,9 +1,10 @@
 import './NavBar.css'
-import BuyButton from "../Buttons/Button";
+import BuyButton from "../Buttons/ButtonNav";
 import CartWidget from './CartWidget/CartWidget';
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
+import Categories from '../GenreList/Categories'
 import { NavLink,Link } from 'react-router-dom'
 
 const NavBar = () => {
@@ -19,7 +20,7 @@ const NavBar = () => {
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto nav-links">
                             <NavLink exact to='/' activeClassName='active'>Inicio</NavLink>
-                            <NavLink exact to='/categories' activeClassName='active'>Categorías</NavLink>
+                            <Categories className="categories"><NavLink activeClassName='active' /></Categories>
                             <NavLink exact to='/contact' activeClassName='active'>Contactanos</NavLink>
                             <BuyButton variant="light" size="sm"></BuyButton>
                         </Nav>

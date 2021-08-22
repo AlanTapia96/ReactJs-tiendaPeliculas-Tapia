@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react"
 import { DropdownButton } from "react-bootstrap"
-import { Dropdown } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 import './CategoriesListDropDown.css'
 
 const CategoriesListDropDown = ( {categoriesData} ) => {
     
     const [categories, setCategories] = useState(null)
+
+    const [isHovered, setIsHovered] = useState(false);
+    const [isClicked, setIsClicked] = useState(false);
+
 
     useEffect(() => {
         
@@ -20,7 +23,12 @@ const CategoriesListDropDown = ( {categoriesData} ) => {
 
     return(
         <div className="dropdown-categories">
-            <DropdownButton title="Seleccione el género">
+            <DropdownButton title="Categoría" className="arrow-none"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                onToggle={() => setIsClicked(!isClicked)}
+                show={isClicked || isHovered}
+            >
                 {categories}
              </DropdownButton>
         </div>

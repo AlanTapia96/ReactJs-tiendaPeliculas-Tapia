@@ -2,10 +2,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import { useParams } from "react-router-dom"
 import ItemList from "../../ItemListContainer/ItemList/ItemList"
-import Categories from "../Categories"
 import { Row, Spinner } from "react-bootstrap"
-// import CategoriesListDropDown from "../CategoriesListDropDown/CategoriesListDropDown"
-
 
 const CategoriesListContainer = ( ) => {
 
@@ -43,7 +40,6 @@ const CategoriesListContainer = ( ) => {
                 </Row>
             } 
             {!loading && <>
-                            <Categories/>
                             <ItemList items={films}/>
                         </>
             }

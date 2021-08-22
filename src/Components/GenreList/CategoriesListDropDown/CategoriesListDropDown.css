@@ -6,7 +6,25 @@
 }
 
 .dropdown-categories{
-    margin-top: 4rem;
     display: flex;
     justify-content: center;
+    background-color: #212529!important;
+    margin-right: 2rem;
+}
+
+.dropdown{
+    display: flex;
+}
+
+.arrow-none > button, .arrow-none{
+    background-color: transparent!important;
+    border: none!important;
+    padding: 0!important;
+    text-decoration: none;
+    color: aliceblue;
+    transition: all 0.5s ease;
+}
+
+.arrow-none > button::after{
+    display:none;
 }
