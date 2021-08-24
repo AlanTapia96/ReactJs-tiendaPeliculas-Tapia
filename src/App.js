@@ -1,10 +1,13 @@
 import './App.css';
 import Router from './pages/Router';
+import CartState from "./Context/CartContext";
 
 function App() {
   return (
     <>
-      <Router />
+      <CartState>
+        <Router />
+      </CartState>
     </>
   );
 }

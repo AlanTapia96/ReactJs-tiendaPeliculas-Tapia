@@ -19,7 +19,7 @@ const ItemCount = ({ stock=5, initial=1, onAddItem }) => {
             }     
         }
 
-        const handleAddChart = () => {
+        const handleAddCart = () => {
             onAddItem(cant)
         }
         
@@ -31,7 +31,7 @@ const ItemCount = ({ stock=5, initial=1, onAddItem }) => {
                     <button type="button" disabled={cant===stock} className="btn btn-primary" onClick={handleCant.agregar}>+</button>
                 </div>
                 <div className="card__button">
-                    <ButtonItemCart handleEvent={handleAddChart} cant={cant} text={"Agregar al carrito"} disabled={cant===0} className="buyButton"/> 
+                    <ButtonItemCart handleEvent={handleAddCart} cant={cant} text={"Agregar al carrito"} disabled={cant===0} className="buyButton"/> 
                 </div>
             </>
     )}

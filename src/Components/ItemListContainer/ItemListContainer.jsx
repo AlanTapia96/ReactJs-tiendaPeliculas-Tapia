@@ -2,7 +2,6 @@ import ItemList from "./ItemList/ItemList";
 import { useEffect, useState } from "react";
 import "./ItemListContainer.css"
 import { Row,Spinner } from 'react-bootstrap'
-
        
 const ItemListContainer = ( ) => {
     const [films, setFilms] = useState([])
@@ -27,7 +26,6 @@ const ItemListContainer = ( ) => {
             })
         },2000)
     },[])
-    
 
     return(
         <>

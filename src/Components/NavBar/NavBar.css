@@ -17,17 +17,17 @@
     text-decoration: none;
     color: aliceblue;
     margin-right: 2rem;
-    transition: all 0.5s ease;
+
 }
 
 .link-img{
     text-decoration: none;
     color: aliceblue;
-    transition: all 0.1s ease;
+    transition: all 0s ease;
 }
 
-.nav-links > a:hover, .link-img:hover{
+.nav-links > a:hover, .link-img:hover, .categories{
     color: white;
-    font-size: 1.05rem;
-    margin-bottom: .25rem;
+    /* font-size: 1.03rem;
+    margin-bottom: .25rem; */
 }

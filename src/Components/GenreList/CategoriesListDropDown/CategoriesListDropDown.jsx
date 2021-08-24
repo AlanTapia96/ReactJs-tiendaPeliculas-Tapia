@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { DropdownButton } from "react-bootstrap"
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './CategoriesListDropDown.css'
 
 const CategoriesListDropDown = ( {categoriesData} ) => {
@@ -15,11 +15,11 @@ const CategoriesListDropDown = ( {categoriesData} ) => {
         
         const getCategories = categoriesData.genres.map( (categories) => 
             <div key={categories.id} >
-                <Link to={`/categories/${categories.id}`} className='categoriesList-item'>{categories.name}</Link>
+                <NavLink activeClassName='active' to={`/categories/${categories.id}`} className='categoriesList-item'>{categories.name}</NavLink>
             </div>
             )
             setCategories(getCategories);
-    },[])
+    }, [])
 
     return(
         <div className="dropdown-categories">

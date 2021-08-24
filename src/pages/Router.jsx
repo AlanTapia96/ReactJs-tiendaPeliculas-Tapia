@@ -7,7 +7,6 @@ import NavBar from '../Components/NavBar/NavBar';
 import Form from '../Components/Form/Form'
 import Cart from '../Components/Cart/Cart';
 
-
 const Router = () =>{
   return(
     <>

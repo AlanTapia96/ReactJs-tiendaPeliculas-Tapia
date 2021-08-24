@@ -20,7 +20,7 @@ const NavBar = () => {
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto nav-links">
                             <NavLink exact to='/' activeClassName='active'>Inicio</NavLink>
-                            <Categories className="categories"><NavLink activeClassName='active' /></Categories>
+                            <Categories className="categories"/>
                             <NavLink exact to='/contact' activeClassName='active'>Contactanos</NavLink>
                             <BuyButton variant="light" size="sm"></BuyButton>
                         </Nav>
