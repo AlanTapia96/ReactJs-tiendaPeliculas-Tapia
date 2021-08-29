@@ -22,7 +22,7 @@ const NavBar = () => {
                             <NavLink exact to='/' activeClassName='active'>Inicio</NavLink>
                             <Categories className="categories"/>
                             <NavLink exact to='/contact' activeClassName='active'>Contactanos</NavLink>
-                            <BuyButton variant="light" size="sm"></BuyButton>
+                            <NavLink exact to='/cart'><BuyButton variant="light" size="sm"></BuyButton></NavLink>
                         </Nav>
                         </Navbar.Collapse>
                 </Container>

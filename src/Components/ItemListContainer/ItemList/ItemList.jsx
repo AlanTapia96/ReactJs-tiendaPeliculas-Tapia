@@ -2,7 +2,7 @@ import ItemCard from "../../ItemCard/ItemCard"
 import { Col,Row } from "react-bootstrap"
 
 
-const ItemList = ( {items} ) => {
+const ItemList = ({ items }) => {
     return(
     <div className="itemList">
         <Row>

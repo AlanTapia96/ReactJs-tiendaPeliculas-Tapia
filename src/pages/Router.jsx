@@ -5,7 +5,7 @@ import ItemListContainer from '../Components/ItemListContainer/ItemListContainer
 import ItemDetailContainer from '../Components/ItemDetailContainer/ItemDetailContainer';
 import NavBar from '../Components/NavBar/NavBar';
 import Form from '../Components/Form/Form'
-import Cart from '../Components/Cart/Cart';
+import CartContainer from '../Components/Cart/CartContainer';
 
 const Router = () =>{
   return(
@@ -17,7 +17,7 @@ const Router = () =>{
             <Route exact path='/categories/:idCategory' component={CategoriesListContainer} />
             <Route exact path='/contact' component={Form} />
             <Route exact path='/' component={ItemListContainer} />
-            <Route exact path='/cart' component={Cart} />
+            <Route exact path='/cart' component={CartContainer} />
             <Route exact path='*'>
               <h1>ERROR 404. RUTA NO EXISTENTE</h1>
             </Route>

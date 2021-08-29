@@ -1,0 +1,14 @@
+.cartEmpty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.totalMount, h4{
+    display:inline-block;
+    margin-top: 1rem;
+    text-align: right;
+}
+

@@ -24,7 +24,7 @@ const ItemListContainer = ( ) => {
             .catch(e => {
                 console.log("Se produjo el siguiente error ",e)
             })
-        },2000)
+        },10)
     },[])
 
     return(
