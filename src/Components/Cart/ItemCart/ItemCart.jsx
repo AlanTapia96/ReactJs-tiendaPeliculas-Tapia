@@ -1,16 +1,12 @@
-import { useContext } from "react";
 import { Button } from "react-bootstrap";
-import { CartContext } from "../../../Context/CartContext";
 import "./ItemCart.css"
 
 const ItemCart = ( props ) => {
 
     const { film, cantidad, onDeleteEvent } = props;
     const { id,title,price,pictureUrl } = film;         
-    const cartContext = useContext(CartContext)
 
     const handleDeleteEvent = () => {
-        //cartContext.removeItem((id))
         onDeleteEvent(id,price,cantidad);
         }
 

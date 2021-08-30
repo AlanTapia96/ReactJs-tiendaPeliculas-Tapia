@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap';
-import { useEffect, useContext, useState } from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom';
 import { CartContext } from '../../Context/CartContext';
 import ItemCartList from './ItemCartList/ItemCartList';
@@ -8,12 +8,9 @@ import './CartContainer.css'
 const CartContainer = () => {
 
     const { productsCart, totalPrice, removeItem } = useContext(CartContext);
-    const [ changes, setChanges ] = useState(true)
 
     const onDeleteEvent = (id,price,cantidad) => {
-        removeItem(id);
-        console.log("hola mundo")
-        setChanges(!changes)
+        removeItem(id,price,cantidad);
     }
 
     return(
