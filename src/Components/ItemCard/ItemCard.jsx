@@ -2,11 +2,11 @@ import "./ItemCard.css"
 import { Link } from "react-router-dom"
 
 const ItemCard = (item) => {
-    const {id,title,description,price,pictureUrl} = item;
+    const {id,title,description,price,pirctureUrl} = item;
     return(
         <div className="card item">
             <div className="item-img">
-                <img src={pictureUrl} alt="" />
+                <img src={pirctureUrl} alt="" />
             </div>
             <div className="item-data" id={id}>  
                 <h3>{title}</h3>

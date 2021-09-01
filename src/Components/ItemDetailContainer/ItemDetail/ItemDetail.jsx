@@ -7,7 +7,7 @@ import ButtonItemCart from '../../Buttons/ButtonItemCart';
 import './ItemDetail.css'
 
 const ItemDetail = ( film ) => {
-    const {title,description,price,pictureUrl} = film.film;
+    const {title,description,price, pirctureUrl} = film.film;
 
     const [cantSeleccionada, setCantSeleccionada] = useState(0)
     const [seleccion, setSeleccion] = useState(false)
@@ -30,7 +30,7 @@ const ItemDetail = ( film ) => {
             <Col xs={11}>
             <div className="card-flex">
                     <div className="col-5 div-img">
-                        <img src={pictureUrl} className="itemDetail-img" alt=""/>
+                        <img src={pirctureUrl} className="itemDetail-img" alt=""/>
                     </div>
                     <Card.Body className="col-4 div-body">
                         <Card.Title className="itemDetail-title container">{title}</Card.Title>
