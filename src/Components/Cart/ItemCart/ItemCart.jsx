@@ -4,7 +4,7 @@ import "./ItemCart.css"
 const ItemCart = ( props ) => {
 
     const { film, cantidad, onDeleteEvent } = props;
-    const { id,title,price, pirctureUrl } = film;         
+    const { id,title,price, pictureUrl } = film;         
 
     const handleDeleteEvent = () => {
         onDeleteEvent(id,price,cantidad);
@@ -13,7 +13,7 @@ const ItemCart = ( props ) => {
     return(
         <div className='container cartContainer'>
             <div className='img'>
-                <img src={pirctureUrl} alt="film carrito"/>
+                <img src={pictureUrl} alt="film carrito"/>
             </div>
             <div className="filmData">
                 <h4>{title}</h4>

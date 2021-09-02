@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react"
 import CategoriesListDropDown from "./CategoriesListDropDown/CategoriesListDropDown"
 
-
-
 const Categories = () => {
     
     const [categories,setCategories] = useState([])

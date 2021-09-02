@@ -1,7 +1,7 @@
-import ItemList from "./ItemList/ItemList";
 import { useEffect, useState } from "react";
 import { Row,Spinner } from 'react-bootstrap'
-import { getDocs, makeQuery, getCollection, add } from "../../firebase"
+import { getDocs, getCollection } from "../../firebase"
+import ItemList from "./ItemList/ItemList";
 import "./ItemListContainer.css"
 
        
@@ -20,14 +20,15 @@ const ItemListContainer = ( ) => {
                 for(let film of films.results){
                     i += 50
                     let price = i
-                    const obj = {id: film.id, title:film.title, description: film.overview, price: price, pictureUrl: `https://image.tmdb.org/t/p/w500/${film.poster_path}`}
+                    const obj = {id: film.id, title:film.title, description: film.overview, price: price, pictureUrl: `https://image.tmdb.org/t/p/w500/${film.poster_path}`,category: film.genre_ids}
                     const response = await add(
                         {
                             id: obj.id,
                             title: obj.title,
                             description: obj.description,
                             price: obj.price,
-                            pirctureUrl: obj.pictureUrl
+                            pictureUrl: obj.pictureUrl,
+                            category: obj.category
                         },
                       );
                 }
@@ -48,7 +49,6 @@ const ItemListContainer = ( ) => {
             querySnapshot.forEach((doc) => {
                 arr.push(doc.data())
             })
-            console.log(arr);
             setFilms(arr)
             setLoading(false)
         }
