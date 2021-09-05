@@ -11,7 +11,7 @@ const ItemCart = ( props ) => {
         }
 
     return(
-        <div className='container cartContainer'>
+        <div className='itemContainer'>
             <div className='img'>
                 <img src={pictureUrl} alt="film carrito"/>
             </div>
@@ -21,7 +21,7 @@ const ItemCart = ( props ) => {
                 <p>Cantidad: {cantidad}</p>
             </div>
             <div>
-                <Button variant='danger' onClick={handleDeleteEvent}>X</Button>
+                <Button className="deleteButton" variant='danger' onClick={handleDeleteEvent}><p>X</p></Button>
             </div>
         </div>
     )

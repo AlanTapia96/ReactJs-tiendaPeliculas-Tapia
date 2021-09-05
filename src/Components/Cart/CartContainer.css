@@ -1,9 +1,14 @@
+.cartContainer{
+    position: relative;
+    margin-top: 1rem;
+}
+
 .cartEmpty{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    
 }
 
 .totalMount, h4{
@@ -12,3 +17,8 @@
     text-align: right;
 }
 
+.topButton{
+    position: absolute;
+    top: 0;
+    right: 1.5em;
+}

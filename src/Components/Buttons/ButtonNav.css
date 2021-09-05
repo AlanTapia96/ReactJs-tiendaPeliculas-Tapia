@@ -1,0 +1,32 @@
+.buttonContainer{
+    position: relative;
+}
+
+.empty, .notEmpty{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding-bottom: .1em;
+    width: 1.2em;
+    height: 1.2em;
+    top: -.6em;
+    left: -.6em;
+    border-radius: 100%;
+}
+
+.notEmpty{
+    background-color: rgb(5, 102, 5);
+    color: white;
+}
+
+.empty{
+    background-color: red;
+    color: white;
+}
+
+.buttonCant{
+    position: relative;
+    font-size: .7em;
+    margin-bottom: 0;
+}

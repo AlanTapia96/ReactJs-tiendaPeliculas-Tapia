@@ -31,4 +31,17 @@ export const makeQuery = (nameDb, field, condition, value) => {
 
 export const setDoc = (obj, path, ...pathSegments) => setDocFromFirebase(doc(db, path, ...pathSegments), obj);
 
-export const add = (obj) => addDoc(collection(db,'films'),obj)
+export const add = (obj) => addDoc(collection(db,'films',obj))
+
+export const addNewOrder = (obj) => addDoc(collection(db,'orders'),obj)
+
+export const newOrder = {
+  buyer: "Alan",
+  items: {id: 5, nombre: "Harry Potter"},
+  date: '20-03-1996',
+  total: 500
+}
+
+export const addOrder = () => addNewOrder(newOrder).then( ({id}) => {
+  console.log(id)
+}).catch( err => { console.log("no se pudo")})

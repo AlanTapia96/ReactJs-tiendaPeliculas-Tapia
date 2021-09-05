@@ -1,3 +1,5 @@
 .itemCartList{
-    margin-top:3rem!important;
+    /* margin-top:3rem!important; */
+    width: 80%;
+    margin: 0 auto;
 }

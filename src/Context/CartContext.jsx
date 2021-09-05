@@ -34,7 +34,10 @@ const CartState = (props) => {
         setTotalPrice(prev => prev - (price*cantidad))
     }
 
-    const clearCart = () => setProducts([])
+    const clearCart = () => {
+        setProducts([]);
+        setTotalPrice(0)
+    }
 
 
     useEffect( () => {
