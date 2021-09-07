@@ -56,7 +56,7 @@ const ItemListContainer = ( ) => {
     }, [])
 
     return(
-        <>
+        <div className="itemListContainer">
             {loading && 
                 <Row className="justify-content-md-center mt-5" >
                     <Spinner animation="grow"/>
@@ -65,7 +65,7 @@ const ItemListContainer = ( ) => {
             {!loading && <div>
                 <ItemList items={films}/>
             </div>}
-        </>
+        </div>
 )}
 
 export default ItemListContainer;

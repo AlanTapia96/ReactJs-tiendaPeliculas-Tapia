@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail/ItemDetail";
 import { makeQuery, getDocs } from "../../firebase"
+import './ItemDetailContainer.css'
 
 const ItemDetailContainer = ( ) => {
     const { filmId } = useParams();
@@ -30,9 +31,9 @@ const ItemDetailContainer = ( ) => {
     },[filmId])
 
     return(
-        <>
+        <div className="itemDetailContainer">
          {!loading && <ItemDetail film={filmDetail}/>}
-        </>
+        </div>
     )
 }
 

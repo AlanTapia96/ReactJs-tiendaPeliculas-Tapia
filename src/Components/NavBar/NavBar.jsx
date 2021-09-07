@@ -10,7 +10,7 @@ import { NavLink,Link } from 'react-router-dom'
 const NavBar = () => {
     return(
         <>
-            <Navbar bg="dark" variant="dark" expand="lg">
+            <Navbar bg="dark" variant="dark" expand="lg" fixed="top" className="navBar">
                 <Container>
                         <div>
                             <CartWidget />

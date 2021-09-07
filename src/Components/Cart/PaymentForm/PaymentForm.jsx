@@ -16,30 +16,32 @@ const PaymentForm = ( props ) => {
         <div className="col-75">
             <div className="container">
             <form >
-
                 <Row>
-                <div className="col-12">
+                <div className="col-12 containerData">
                     <h3>Datos personales</h3>
-                    <input type="text" name="firstname" placeholder="Nombre completo"/>
-                    <input type="text" name="email" placeholder="Mail"/>
-                    <input type="text" name="phone" placeholder="Teléfono"/>
+                    <div>
+                        <input type="text" name="firstname" placeholder="Nombre"/>
+                        <input type="text" name="lasttname" placeholder="Apellido"/>
+                    </div>
+                    <div>
+                        <input type="text" name="email" placeholder="Mail"/>
+                        <input type="text" name="phone" placeholder="Teléfono"/>
+                    </div>
                 </div>
-
-                <div className="col-6">
+                <div className="col-12 containerData">
                     <h3>Datos tarjeta</h3>
+                    <Row>
                     <input type="text" id="cname" name="cardname" placeholder="Nombre titular"/>
                     <input type="text" id="ccnum" name="cardnumber" placeholder="Número de la tarjeta"/>
-                    <input type="text" id="expmonth" name="expmonth" placeholder="Fecha de expiración"/>
-
+                    </Row>
                     <Row>
-                    <div className="col-12">
+                        <input type="text" id="expmonth" name="expmonth" placeholder="Fecha de expiración"/>
                         <input type="text" id="cvv" name="cvv" placeholder="Código de seguridad"/>
-                    </div>
+                <input type="submit" value="Realizar pago" className="btnForm" onClick={handleSubmit}/>
                     </Row>
                 </div>
 
                 </Row>
-                <input type="submit" value="Realizar pago" className="btn" onClick={handleSubmit}/>
             </form>
             </div>
         </div>

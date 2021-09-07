@@ -2,3 +2,7 @@ h1{
     text-align: center;
     text-shadow: 1px 1px 6px;
 }
+
+.itemListContainer{
+    padding-top: 3.5rem;
+}

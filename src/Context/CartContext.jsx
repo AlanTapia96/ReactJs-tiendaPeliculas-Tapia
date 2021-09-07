@@ -17,13 +17,14 @@ const CartState = (props) => {
         let filmInCart = isInCart(idFilm);
         if(!filmInCart){
             setProducts(productsBefore => [...productsBefore, {film,cantidad}])
-            notyf.open({ type: 'success', message: "Película agregada al carrito con éxito!"})  
+            notyf.open({ type: 'success', message: "Película agregada al carrito con éxito!"})
+            setTotalPrice(prev => prev + (price*cantidad))  
         } else {
-            removeItem(idFilm);
+            removeItem(idFilm,price,cantidad);
             setProducts(productsBefore => [...productsBefore, {film,cantidad}])
             notyf.open({ type: 'warning', message: "Se actualizó la cantidad seleccionada" }) 
+            setTotalPrice(ant => ant + (price*cantidad))
         }
-        setTotalPrice(prev => prev + (price*cantidad))
     }
 
     const isInCart = (id) => productsCart.find(product => product.film.id === id)
@@ -41,7 +42,7 @@ const CartState = (props) => {
 
 
     useEffect( () => {
-        // console.log(productsCart)
+        console.log(totalPrice)
     }, [productsCart])
 
     return(
