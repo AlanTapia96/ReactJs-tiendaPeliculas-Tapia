@@ -11,10 +11,10 @@
     
 }
 
-.totalMount, h4{
-    display:inline-block;
-    margin-top: 1rem;
-    text-align: right;
+.totalMount{
+    margin-top: 2rem!important;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .topButton{

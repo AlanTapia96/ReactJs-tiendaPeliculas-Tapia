@@ -1,5 +1,7 @@
 import ItemCard from "../../ItemCard/ItemCard"
+import './ItemList.css'
 import { Col,Row } from "react-bootstrap"
+
 
 
 const ItemList = ({ items }) => {

@@ -8,7 +8,10 @@ const CategoriesListContainer = ( ) => {
 
     const [films, setFilms] = useState([])
     const [loading, setLoading] = useState(true)
-    const { idCategory } = useParams();
+    const [empty, setEmpty] = useState(false)
+    const { idCategory } = useParams()
+
+    //Código para traer las películas desde la API
 
     /*useEffect(()=>{
         setLoading(true)
@@ -40,7 +43,10 @@ const CategoriesListContainer = ( ) => {
             const docs = await getDocs(filmData);
             const arr = [];
             docs.forEach( (doc) => arr.push(doc.data()) )
-            setFilms(arr)
+            if(arr.length > 0)
+                setFilms(arr)
+            else 
+                setEmpty(true);
             setLoading(false)
         }              
         getFilmsByCategory();
@@ -48,17 +54,21 @@ const CategoriesListContainer = ( ) => {
     
     return(
         <>
+
             {loading && 
                 <Row className="justify-content-md-center mt-5" >
                     <h3>Aguarde unos instantes..</h3><Spinner animation="grow" className="mb-5 ms-4"/>
                 </Row>
             } 
-            {!loading && <>
+            {!loading && !empty &&<>
                             <ItemList items={films}/>
                         </>
             }
-            
-
+            {!loading && empty && 
+                <>
+                      <h3>No hay pelis</h3>     
+                </>
+            }
         </>
     )
 

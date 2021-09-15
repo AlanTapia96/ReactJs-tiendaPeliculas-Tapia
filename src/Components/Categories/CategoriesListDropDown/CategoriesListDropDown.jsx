@@ -23,7 +23,7 @@ const CategoriesListDropDown = ( {categoriesData} ) => {
 
     return(
         <div className="dropdown-categories">
-            <DropdownButton title="Categoría" className="arrow-none"
+            <DropdownButton title="Categorías" className="arrow-none"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onToggle={() => setIsClicked(!isClicked)}

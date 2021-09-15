@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createContext, useContext } from 'react';
+import React, { useState, createContext, useContext } from 'react';
 import NotyfContext from '../Libraries/Notyf/NotyfContext'
 
 export const CartContext = createContext();
@@ -20,10 +20,17 @@ const CartState = (props) => {
             notyf.open({ type: 'success', message: "Película agregada al carrito con éxito!"})
             setTotalPrice(prev => prev + (price*cantidad))  
         } else {
-            removeItem(idFilm,price,cantidad);
-            setProducts(productsBefore => [...productsBefore, {film,cantidad}])
+            const cartAux = productsCart.map((film)=>{
+                if (film.film.id === idFilm) {
+                    setTotalPrice(prev => prev - (film.cantidad*price))
+                    film.cantidad = cantidad;
+                }
+                return film
+            })
+            setProducts(cartAux)
             notyf.open({ type: 'warning', message: "Se actualizó la cantidad seleccionada" }) 
             setTotalPrice(ant => ant + (price*cantidad))
+
         }
     }
 
@@ -39,11 +46,6 @@ const CartState = (props) => {
         setProducts([]);
         setTotalPrice(0)
     }
-
-
-    useEffect( () => {
-        console.log(totalPrice)
-    }, [productsCart])
 
     return(
         <CartContext.Provider value={{productsCart,totalPrice,añadirProducto: addItem,clearCart,removeItem}}>

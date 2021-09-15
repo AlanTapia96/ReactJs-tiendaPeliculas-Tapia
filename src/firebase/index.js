@@ -42,6 +42,6 @@ export const newOrder = {
   total: 500
 }
 
-export const addOrder = () => addNewOrder(newOrder).then( ({id}) => {
+export const addOrder = (order) => addNewOrder(order).then( ({id}) => {
   console.log(id)
-}).catch( err => { console.log("no se pudo")})
+}).catch( err => { console.log("No se pudo generar la orden")})
