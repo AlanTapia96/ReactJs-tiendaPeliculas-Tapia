@@ -41,6 +41,9 @@ const CartContainer = () => {
                         <h4>Monto total: {totalPrice}</h4>
                         <Button variant="success" onClick={ () => {setFinishBuy(true)}}>Finalizar compra</Button>
                         <Button className="topButton" variant="danger" onClick={()=> clearCart()}>Vaciar carrito</Button>
+                        <Link to={'/'}>
+                                <Button className="topButton topButton-inicio" variant="primary">Ver más películas</Button>
+                        </Link>
                     </div>
                 </>
                 }
@@ -56,7 +59,7 @@ const CartContainer = () => {
                 }
                 {paymentDone &&
                     <div>
-                        <h2>Compra finalizada con éxito</h2>
+                        <h2>Compra finalizada con éxito!</h2>
                     </div>
                 } 
                 </>

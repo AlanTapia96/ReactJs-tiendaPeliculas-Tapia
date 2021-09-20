@@ -35,13 +35,6 @@ export const add = (obj) => addDoc(collection(db,'films',obj))
 
 export const addNewOrder = (obj) => addDoc(collection(db,'orders'),obj)
 
-export const newOrder = {
-  buyer: "Alan",
-  items: {id: 5, nombre: "Harry Potter"},
-  date: '20-03-1996',
-  total: 500
-}
-
 export const addOrder = (order) => addNewOrder(order).then( ({id}) => {
   console.log(id)
 }).catch( err => { console.log("No se pudo generar la orden")})

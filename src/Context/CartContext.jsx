@@ -15,10 +15,10 @@ const CartState = (props) => {
         const idFilm = film.id;
         
         let filmInCart = isInCart(idFilm);
-        if(!filmInCart){
+        if (!filmInCart) {
             setProducts(productsBefore => [...productsBefore, {film,cantidad}])
-            notyf.open({ type: 'success', message: "Película agregada al carrito con éxito!"})
             setTotalPrice(prev => prev + (price*cantidad))  
+            notyf.open({ type: 'success', message: "Película agregada al carrito con éxito!"})
         } else {
             const cartAux = productsCart.map((film)=>{
                 if (film.film.id === idFilm) {
@@ -30,7 +30,6 @@ const CartState = (props) => {
             setProducts(cartAux)
             notyf.open({ type: 'warning', message: "Se actualizó la cantidad seleccionada" }) 
             setTotalPrice(ant => ant + (price*cantidad))
-
         }
     }
 
@@ -48,7 +47,7 @@ const CartState = (props) => {
     }
 
     return(
-        <CartContext.Provider value={{productsCart,totalPrice,añadirProducto: addItem,clearCart,removeItem}}>
+        <CartContext.Provider value={{productsCart,totalPrice,addItem,clearCart,removeItem}}>
             {props.children}
         </CartContext.Provider>
     )

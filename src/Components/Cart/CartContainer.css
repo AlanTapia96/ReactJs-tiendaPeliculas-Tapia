@@ -12,7 +12,7 @@
 }
 
 .totalMount{
-    margin-top: 2rem!important;
+    margin-top: 9rem!important;
     display: flex;
     justify-content: space-evenly;
 }
@@ -21,4 +21,8 @@
     position: absolute;
     top: 0;
     right: 1.5em;
+}
+
+.topButton-inicio{
+    margin-top: 3rem;
 }
