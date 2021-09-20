@@ -4,7 +4,6 @@ import CategoriesListContainer from '../Components/Categories/CategoriesListCont
 import ItemListContainer from '../Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from '../Components/ItemDetailContainer/ItemDetailContainer';
 import NavBar from '../Components/NavBar/NavBar';
-import Form from '../Components/Form/Form'
 import CartContainer from '../Components/Cart/CartContainer';
 
 const Router = () =>{
@@ -15,7 +14,6 @@ const Router = () =>{
           <Switch>
             <Route exact path='/film/:filmId' component={ItemDetailContainer} />
             <Route exact path='/categories/:idCategory' component={CategoriesListContainer} />
-            <Route exact path='/contact' component={Form} />
             <Route exact path='/' component={ItemListContainer} />
             <Route exact path='/cart' component={CartContainer} />
             <Route exact path='*'>

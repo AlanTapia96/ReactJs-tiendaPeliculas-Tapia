@@ -12,7 +12,6 @@ const CategoriesListContainer = ( ) => {
     const { idCategory } = useParams()
 
     //Código para traer las películas desde la API
-
     /*useEffect(()=>{
         setLoading(true)
         setTimeout(()=>{
@@ -66,7 +65,7 @@ const CategoriesListContainer = ( ) => {
             }
             {!loading && empty && 
                 <>
-                      <h3>No hay pelis</h3>     
+                      <h3>No hay pelis para la categoría</h3>     
                 </>
             }
         </>

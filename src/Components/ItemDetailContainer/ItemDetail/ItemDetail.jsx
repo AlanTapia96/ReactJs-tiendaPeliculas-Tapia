@@ -8,10 +8,14 @@ import './ItemDetail.css'
 
 const ItemDetail = ( film ) => {
     const {title,description,price, pictureUrl} = film.film;
-
     const [cantSeleccionada, setCantSeleccionada] = useState(0)
     const [seleccion, setSeleccion] = useState(false)
     const cartContext = useContext(CartContext);
+    const [stock,setStock] = useState(6)
+
+    const handleChangeStock = (cant) => {
+        setStock(cant)
+    }
  
     const handleAddItem = (cant) => {
         setCantSeleccionada(cant);
@@ -20,7 +24,7 @@ const ItemDetail = ( film ) => {
 
     useEffect( () => {
         if(cantSeleccionada !== 0){
-            cartContext.añadirProducto({...film},cantSeleccionada);
+            cartContext.addItem({...film},cantSeleccionada);
         }
     },[cantSeleccionada])
 
@@ -35,10 +39,11 @@ const ItemDetail = ( film ) => {
                     <Card.Body className="col-4 div-body">
                         <Card.Title className="itemDetail-title container">{title}</Card.Title>
                         <Card.Text>{description}</Card.Text>
+                        <Card.Text>Cantidad disponible: {stock}</Card.Text>
                         <Card.Text>Precio unitario: {price} ARS</Card.Text>
                         {!seleccion && 
                             <>
-                                <ItemCount stock={6} initial={1} onAddItem={handleAddItem} className="itemDetail-itemCount"/> 
+                                <ItemCount stock={stock} initial={1} onAddItem={handleAddItem} onChangeStock={handleChangeStock} className="itemDetail-itemCount"/> 
                             </>
                         }
                         {seleccion && <div>

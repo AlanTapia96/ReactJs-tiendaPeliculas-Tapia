@@ -21,7 +21,6 @@ const NavBar = () => {
                         <Nav className="ms-auto nav-links">
                             <NavLink exact to='/' activeClassName='active'>Inicio</NavLink>
                             <Categories className="categories"/>
-                            {/* <NavLink exact to='/contact' activeClassName='active'>Contactanos</NavLink> */}
                             <NavLink exact to='/cart'><BuyButton variant="light" size="sm"></BuyButton></NavLink>
                         </Nav>
                         </Navbar.Collapse>
