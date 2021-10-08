@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { DropdownButton } from "react-bootstrap"
 import { NavLink } from 'react-router-dom'
-import './CategoriesListDropDown.css'
+import styles from './CategoriesListDropDown.module.css'
 
 const CategoriesListDropDown = ( {categoriesData} ) => {
     
@@ -15,15 +15,15 @@ const CategoriesListDropDown = ( {categoriesData} ) => {
         
         const getCategories = categoriesData.genres.map( (categories) => 
             <div key={categories.id} >
-                <NavLink activeClassName='active' to={`/categories/${categories.id}`} className='categoriesList-item'>{categories.name}</NavLink>
+                <NavLink activeClassName='active' to={`/categories/${categories.id}`} className={styles['categoriesList-item']}>{categories.name}</NavLink>
             </div>
             )
             setCategories(getCategories);
     }, [])
 
     return(
-        <div className="dropdown-categories">
-            <DropdownButton title="Categorías" className="arrow-none"
+        <div className={styles['dropdown-categories']}>
+            <DropdownButton title="Categorías" className={styles['arrow-none']}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 onToggle={() => setIsClicked(!isClicked)}

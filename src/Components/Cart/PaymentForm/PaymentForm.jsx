@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Form, Row } from "react-bootstrap";
-import './PaymentForm.css'
+import styles from './PaymentForm.module.css'
 
 const PaymentForm = ( props ) => {
     
@@ -39,7 +39,7 @@ const PaymentForm = ( props ) => {
             <div className="container">
             <form onSubmit={handleOnSubmit}>
                 <Row>
-                <div className="col-12 containerData">
+                <div className={`col-12 ${styles.containerData}`}>
                     <h3>Datos personales</h3>
                     <div>
                         <input type="text" name="firstname" placeholder="Nombre" onChange={handleOnChange} required />
@@ -50,7 +50,7 @@ const PaymentForm = ( props ) => {
                         <input type="text" name="phone" placeholder="Teléfono" onChange={handleOnChange} required />
                     </div>
                 </div>
-                <div className="col-12 containerData">
+                <div className={`col-12 ${styles.containerData}`}>
                     <h3>Datos tarjeta</h3>
                     <Row>
                     <input type="text" name="cardname" placeholder="Nombre titular" onChange={handleOnChange} required />

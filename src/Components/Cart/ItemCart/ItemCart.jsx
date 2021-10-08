@@ -1,5 +1,5 @@
 import { Button } from "react-bootstrap";
-import "./ItemCart.css"
+import styles from "./ItemCart.module.css"
 
 const ItemCart = ( props ) => {
 
@@ -11,17 +11,17 @@ const ItemCart = ( props ) => {
         }
 
     return(
-        <div className='itemContainer'>
-            <div className='img'>
+        <div className={styles.itemContainer}>
+            <div className={styles.img}>
                 <img src={pictureUrl} alt="film carrito"/>
             </div>
-            <div className="filmData">
+            <div className={styles.filmData}>
                 <h4>{title}</h4>
                 <p>Precio: {price}</p>
                 <p>Cantidad: {cantidad}</p>
             </div>
             <div>
-                <Button className="deleteButton" variant='danger' onClick={handleDeleteEvent}><p>X</p></Button>
+                <Button className={styles.deleteButton} variant='danger' onClick={handleDeleteEvent}><p>X</p></Button>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react"
 import ButtonItemCart from "../Buttons/ButtonItemCart";
-import "./ItemCount.css"
+import styles from "./ItemCount.module.css"
 
 const ItemCount = ({ stock=5, initial=1, onAddItem, onChangeStock }) => {
 
@@ -33,12 +33,12 @@ const ItemCount = ({ stock=5, initial=1, onAddItem, onChangeStock }) => {
         
         return(
             <>
-                <div className="card__body">
+                <div className={styles['card__body']}>
                     <button type="button" disabled={cant===0} className="btn btn-primary" onClick={handleCant.restar}>-</button>
-                    <span className="card-title me-3 ms-3">{cant}</span>
+                    <span className='cardTitle me-3 ms-3'>{cant}</span>
                     <button type="button" disabled={cant===stockInicial} className="btn btn-primary" onClick={handleCant.agregar}>+</button>
                 </div>
-                <div className="card__button">
+                <div className={styles['card__button']}>
                     <ButtonItemCart handleEvent={handleAddCart} cant={cant} text={"Agregar al carrito"} disabled={cant===0} className="buyButton"/> 
                 </div>
             </>

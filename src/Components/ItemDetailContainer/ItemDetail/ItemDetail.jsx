@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ItemCount from '../../ItemCount/ItemCount';
 import { CartContext } from '../../../Context/CartContext';
 import ButtonItemCart from '../../Buttons/ButtonItemCart';
-import './ItemDetail.css'
+import styles from './ItemDetail.module.css'
 
 const ItemDetail = ( film ) => {
     const {title,description,price, pictureUrl} = film.film;
@@ -32,12 +32,12 @@ const ItemDetail = ( film ) => {
         <> 
         <Row className="g-4 m-4 justify-content-md-center">
             <Col xs={11}>
-            <div className="card-flex">
-                    <div className="col-5 div-img">
-                        <img src={pictureUrl} className="itemDetail-img" alt=""/>
+            <div className={styles['card-flex']}>
+                    <div className={`col-5 ${styles['div-img']}`}>
+                        <img src={pictureUrl} className={styles['itemDetail-img']} alt=""/>
                     </div>
-                    <Card.Body className="col-4 div-body">
-                        <Card.Title className="itemDetail-title container">{title}</Card.Title>
+                    <Card.Body className={`col-4 ${styles['div-body']}`}>
+                        <Card.Title className={`${styles[`itemDetail-title`]} container`}>{title}</Card.Title>
                         <Card.Text>{description}</Card.Text>
                         <Card.Text>Cantidad disponible: {stock}</Card.Text>
                         <Card.Text>Precio unitario: {price} ARS</Card.Text>

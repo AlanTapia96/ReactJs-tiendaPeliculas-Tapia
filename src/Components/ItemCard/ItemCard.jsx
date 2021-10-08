@@ -1,14 +1,14 @@
-import "./ItemCard.css"
+import styles from "./ItemCard.module.css"
 import { Link } from "react-router-dom"
 
 const ItemCard = (item) => {
     const {id,title,description,price,pictureUrl} = item;
     return(
-        <div className="card item">
-            <div className="item-img">
+        <div className={`${styles.card} ${styles.item}`}>
+            <div className={`${styles['item-img']}`}>
                 <img src={pictureUrl} alt="" />
             </div>
-            <div className="item-data" id={id}>  
+            <div className={styles['item-data']} id={id}>  
                 <h3>{title}</h3>
                 <p>{description}</p>
                 <p>Precio unitario: {price}</p>              

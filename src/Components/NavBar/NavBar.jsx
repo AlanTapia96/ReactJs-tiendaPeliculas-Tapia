@@ -1,4 +1,4 @@
-import './NavBar.css'
+import styles from './NavBar.module.css'
 import BuyButton from "../Buttons/ButtonNav";
 import CartWidget from './CartWidget/CartWidget';
 import Navbar from 'react-bootstrap/Navbar'
@@ -14,13 +14,13 @@ const NavBar = () => {
                 <Container>
                         <div>
                             <CartWidget />
-                            <Link to='/' className="link-img">PelisJs</Link>
+                            <Link to='/' className={styles['link-img']}>PelisJs</Link>
                         </div>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto nav-links">
-                            <NavLink exact to='/' activeClassName='active'>Inicio</NavLink>
-                            <Categories className="categories"/>
+                        <Nav className={`ms-auto ${styles['nav-links']}`}>
+                            <NavLink exact to='/' activeClassName={styles.active}>Inicio</NavLink>
+                            <Categories className={styles.categories}/>
                             <NavLink exact to='/cart'><BuyButton variant="light" size="sm"></BuyButton></NavLink>
                         </Nav>
                         </Navbar.Collapse>
