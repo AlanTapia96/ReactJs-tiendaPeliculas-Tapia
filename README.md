@@ -1,7 +1,11 @@
 # Proyecto de app de Cine con React
-Este proyecto es un sitio web que simula la compra de películas. Se utilizó la API de The Movie Database para cargar datos en Firebase y leer los datos desde este último.
+ReactJs final project. Coderhouse.
 
-# Sobre el proyecto
+E-commerce simulator.
+
+API "The Movie Database"
+
+# About
 React (Hooks, Context, Router, Promises).
 API de https://www.themoviedb.org.
 Bootstrap + CSS puro.
